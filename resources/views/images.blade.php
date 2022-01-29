@@ -26,7 +26,11 @@
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <ul>
                     @foreach($Images as $Image)
-                        <li style="color:#fff">{{'#' . $Image->id . ' - ' . $Image->name}}</li>
+                        <li style="color:#fff">
+                            {{'#' . $Image->id . ' - ' . $Image->name}}
+                            <br>
+                            {{$Image->tags()->pluck('name')}}
+                        </li>
                     @endforeach
                 </ul>
             </div>

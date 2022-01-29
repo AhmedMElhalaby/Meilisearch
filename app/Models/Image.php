@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Scout\Searchable;
 
 /**
@@ -16,6 +17,10 @@ class Image extends Model
     protected $table = 'images';
     protected $fillable = ['name'];
 
+    public function tags(): HasMany
+    {
+        return $this->hasMany(Tag::class,'image_id');
+    }
     /**
      * @return mixed
      */
