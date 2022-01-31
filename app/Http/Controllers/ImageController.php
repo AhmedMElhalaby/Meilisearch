@@ -23,7 +23,7 @@ class ImageController extends Controller
     {
         $Images = [];
         if ($request->filled('search_type')) {
-            if ($request->search_type == 'meilisearch') {
+            if ($request->search_type == 'solr') {
                 if ($request->filled('q')) {
                     $Tags = Tag::search($request->q)->get()->pluck('image_id');
                     $Images = Image::whereIn('id',$Tags)->get();

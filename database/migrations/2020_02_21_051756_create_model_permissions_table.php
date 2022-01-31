@@ -14,9 +14,9 @@ class CreateModelPermissionsTable extends Migration
     public function up()
     {
         Schema::create('model_permissions', function (Blueprint $table) {
-            $table->id('id');
-            $table->foreignId('model_id');
-            $table->foreignId('permission_id');
+            $table->bigIncrements('id');
+            $table->unsignedInteger('model_id');
+            $table->unsignedInteger('permission_id');
             $table->timestamps();
             $table->foreign('permission_id')->references('id')->on('permissions');
         });

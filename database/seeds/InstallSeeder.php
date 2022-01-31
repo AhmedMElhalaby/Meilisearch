@@ -54,7 +54,6 @@ class InstallSeeder extends Seeder
             $Permission->setNameAr($object['name_ar']);
             $Permission->setKey($object['key']);
             $Permission->save();
-            $Permission->refresh();
             $Link = new Link();
             $Link->setName($object['name']);
             $Link->setNameAr($object['name_ar']);
@@ -62,7 +61,6 @@ class InstallSeeder extends Seeder
             $Link->setIcon($object['icon'] ?? null);
             $Link->setPermissionId($Permission->getId());
             $Link->save();
-            $Link->refresh();
             foreach ($object['Children'] as $child){
                 $CPermission = new Permission();
                 $CPermission->setName($child['name']);
