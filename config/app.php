@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'ar_SA',
 
     /*
     |--------------------------------------------------------------------------
@@ -172,7 +172,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        App\Providers\SolariumServiceProvider::class,
         /*
          * Application Service Providers...
          */

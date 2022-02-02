@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::resource('images','ImageController');
 Route::resource('posts','PostController');
 Route::resource('users','UserController');
+Route::get('/ping', 'SolariumController@ping');
+Route::get('/search', 'SolariumController@search');
