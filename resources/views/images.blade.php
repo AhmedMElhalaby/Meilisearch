@@ -29,7 +29,9 @@
                         <li style="color:#fff">
                             {{'#' . $Image->id . ' - ' . $Image->name}}
                             <br>
-                            {{$Image->tags()->pluck('name')}}
+                            @foreach($Image->tags as $tag)
+                                {{$tag}},
+                            @endforeach
                         </li>
                     @endforeach
                 </ul>
