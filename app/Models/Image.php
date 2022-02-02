@@ -2,16 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Scout\Solr\Searchable;
+use Laravel\Scout\Searchable;
+
 /**
  * @property mixed id
  * @property mixed name
  */
 class Image extends Model
 {
-    use Searchable;
+    use Searchable,HasFactory;
     protected $table = 'images';
     protected $fillable = ['name'];
 

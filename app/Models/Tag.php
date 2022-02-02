@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Scout\Solr\Searchable;
+use Laravel\Scout\Searchable;
+
 /**
  * @property mixed id
  * @property mixed name
@@ -12,7 +14,7 @@ use Scout\Solr\Searchable;
  */
 class Tag extends Model
 {
-    use Searchable;
+    use Searchable,HasFactory;
     protected $table = 'tags';
     protected $fillable = ['name','image_id'];
     public function image(): BelongsTo

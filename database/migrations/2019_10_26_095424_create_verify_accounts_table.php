@@ -14,8 +14,8 @@ class CreateVerifyAccountsTable extends Migration
     public function up()
     {
         Schema::create('verify_accounts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
+            $table->id();
+            $table->foreignId('user_id');
             $table->string('token')->nullable();
             $table->string('code')->nullable();
             $table->tinyInteger('type')->nullable();

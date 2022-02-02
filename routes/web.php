@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','HomeController@index');
+Route::get('/', function () {
+    app()->setLocale('ar');
+    return view('welcome');
+});
 Route::resource('images','ImageController');
 Route::resource('posts','PostController');
 Route::resource('users','UserController');
-Route::get('/search', 'SolariumController@search');

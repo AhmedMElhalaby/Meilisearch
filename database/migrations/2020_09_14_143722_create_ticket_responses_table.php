@@ -14,8 +14,8 @@ class CreateTicketResponsesTable extends Migration
     public function up()
     {
         Schema::create('ticket_responses', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedInteger('ticket_id');
+            $table->id();
+            $table->foreignId('ticket_id');
             $table->string('response')->nullable();
             $table->tinyInteger('sender_type');
             $table->timestamps();

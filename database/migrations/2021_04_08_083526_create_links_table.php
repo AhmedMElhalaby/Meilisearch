@@ -14,13 +14,13 @@ class CreateLinksTable extends Migration
     public function up()
     {
         Schema::create('links', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('name');
             $table->string('name_ar');
             $table->string('url');
             $table->string('icon')->nullable();
-            $table->unsignedInteger('permission_id')->nullable();
-            $table->unsignedInteger('parent_id')->nullable();
+            $table->foreignId('permission_id')->nullable();
+            $table->foreignId('parent_id')->nullable();
             $table->timestamps();
         });
     }
