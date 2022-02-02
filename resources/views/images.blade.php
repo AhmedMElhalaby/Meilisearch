@@ -30,7 +30,7 @@
                             {{'#' . $Image->id . ' - ' . $Image->name}}
                             <br>
                             @foreach($Image->tags as $tag)
-                                {{$tag}},
+                                {{$tag->name}},
                             @endforeach
                         </li>
                     @endforeach
