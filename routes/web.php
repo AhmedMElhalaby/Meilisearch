@@ -22,3 +22,5 @@ Route::resource('posts','PostController');
 Route::resource('users','UserController');
 Route::get('/ping', 'SolariumController@ping');
 Route::get('/search', 'SolariumController@search');
+Route::get('meiliesearch/doc', 'MeiliesearchController@store_doc');
+Route::get('meiliesearch/search', 'MeiliesearchController@search');
