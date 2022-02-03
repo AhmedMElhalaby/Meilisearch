@@ -17,6 +17,7 @@ class Tag extends Model
     use Searchable,HasFactory;
     protected $table = 'tags';
     protected $fillable = ['name','image_id'];
+    protected $hidden = ['created_at','updated_at','image_id'];
     public function image(): BelongsTo
     {
         return $this->belongsTo(Image::class);

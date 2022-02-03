@@ -16,7 +16,7 @@ class Image extends Model
     use Searchable,HasFactory;
     protected $table = 'images';
     protected $fillable = ['name'];
-
+    protected $hidden = ['created_at','updated_at'];
     public function tags(): HasMany
     {
         return $this->hasMany(Tag::class,'image_id');
