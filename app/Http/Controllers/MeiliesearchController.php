@@ -12,6 +12,7 @@ class MeiliesearchController extends Controller
     {
         $client = new Client('http://127.0.0.1:7700', 'hv7SEHtabef5f8dea8218486c50bf7d10eb467e1a4d58895d6d7dc121bec7c173a9a4e9c');
         $index = $client->index('images');
+        $index->deleteAllDocuments();
         $index->addDocuments(Image::with('tags')->get()->toArray());
         return 'Done!';
     }
